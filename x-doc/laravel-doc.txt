@@ -1,0 +1,66 @@
+*=*=*=*=*=* Laravel Commands *=*=*=*=*
+💎🚀✅ 💥 🔥 📌
+
+1. composer create-project Laravel/Laravel example-app
+*** composer create-project laravel/laravel:^11.0 practice_app
+
+ ( than fixe your DB in env file and run migrate command )
+
+--> php artisan migrate
+--> php artisan migrate:fresh --seed
+
+2. composer require Laravel/breeze --dev
+3. php artisan breeze:install -> blade -> 1
+--> php artisan serve
+php artisan serve --port=8080
+
+php artisan reverb:start --debug  **[chat in local must run reverb]**
+
+4. php artisan make:controller App/Http/Controllers/Web/Backend/Blog/BlogController -r
+
+*!* php artisan make:controller App/Http/Controllers/Api/OrderController
+*!* php artisan make:controller App/Http/Controllers/API/Cms/AboutPageController
+
+5. php artisan make:model Blog -m
+
+6. php artisan make:middleware Admin
+
+php artisan route:clear
+php artisan cache:clear
+php artisan config:cache
+php artisan optimize:clear
+composer update
+composer dump-autoload
+
+
+php artisan about 			( show environment, cache, driver )
+php artisan queue:work 			( for mail sending )
+
+composer dump-autoload 			[ this is recent version command ]
+
+php artisan reverb:start 		*( Run the reverb server for live chat )
+
+php artisan reverb:start --debug 	*( for debug )
+
+php artisan migrate
+
+php artisan migrate:rollback
+php artisan migrate:reset 		(all database reset)
+
+php artisan migrate:refresh 		( push update data and remove ex data)
+php artisan migrate:fresh --seed
+
+4242 4242 4242 4242
+
+php artisan storage:link 		{ To create image path }
+
+
+git project run system..
+	1. npm i
+	2.
+	3. composer update
+	4. php artisan migrate
+	5. php artisan db:seed
+	6. php artisan storage:link
+	7. php artisan key:generate
+	8. php artisan config:cache
