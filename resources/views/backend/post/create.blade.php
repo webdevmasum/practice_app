@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Post Create Page') }}
+        </h2>
+    </x-slot>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My App</title>
-
-    <!-- Tailwind CSS (optional) -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon (optional) -->
-    <link rel="icon" type="image/png" href="favicon.png" />
-</head>
-
-<body class="bg-gray-100 text-gray-800">
-
-    <header class="bg-white shadow p-4">
-        <div class="max-w-7xl mx-auto">
-            <h1 class="text-xl font-bold">Welcome to create post page</h1>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    {{ __("You're logged in!") }}
+                    create page post
+                </div>
+            </div>
         </div>
-    </header>
-
-
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-</body>
-
-</html>
+    </div>
+</x-app-layout>
