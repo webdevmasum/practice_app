@@ -5,8 +5,7 @@
         </h2>
 
         <div class="flex justify-end">
-            <a href="{{ route('post.index') }}"
-                class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 dark:active:bg-gray-500 focus:outline-none focus:border-gray-900 dark:focus:border-gray-300 transition ease-in-out duration-150">
+            <a href="{{ route('post.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 dark:active:bg-gray-500 focus:outline-none focus:border-gray-900 dark:focus:border-gray-300 transition ease-in-out duration-150">
                 Go to posts
             </a>
         </div>

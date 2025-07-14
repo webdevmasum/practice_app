@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web\Backend\Post;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -28,7 +29,27 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        // dd($request->all());
+
+        $imagepath = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagepath = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imagepath);
+        }
+
+        $post = new Post();
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->image = $imagepath;
+        $post->save();
+
+        return redirect()->route('post.index');
     }
 
     /**

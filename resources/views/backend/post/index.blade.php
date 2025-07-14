@@ -1,23 +1,32 @@
-post index page
-<x-app-layout>
-    <x-slot name="header">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-        <div class="flex justify-end">
-            <a href="{{ route('post.index') }}"
-                class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 dark:active:bg-gray-500 focus:outline-none focus:border-gray-900 dark:focus:border-gray-300 transition ease-in-out duration-150">
-                Go to posts
-            </a>
-        </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-    </x-slot>
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
+    <!-- Onno head er content -->
+</head>
+
+<body class="font-sans antialiased">
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Post</h1>
+            <div>
+                <a href="{{ route('dashboard') }}" class="btn btn-primary me-2">
+                    Back to Dashboard
+                </a>
+                <a href="{{ route('post.create') }}" class="btn btn-info">
+                    Create Post
+                </a>
             </div>
         </div>
     </div>
-</x-app-layout>
+
+</body>
+
+</html>
