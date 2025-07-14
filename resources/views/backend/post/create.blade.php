@@ -25,19 +25,37 @@
                     <div class="grid grid-cols-1 gap-6">
                         <div class="sm:col-span-1">
                             <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                            <input type="text" id="title" name="title"
+                            <input type="text" id="title" name="title" value="{{ old('title') }}"
                                 class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+
+                            @error('title')
+                                <div class="text-red mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="sm:col-span-1">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                            <textarea id="description" name="description" rows="3"
+                            <textarea id="description" name="description" rows="2" value="{{ old('description') }}"
                                 class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+
+                            @error('description')
+                                <div class="text-red mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-1 mb-3">
                             <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-                            <input type="file" id="image" name="image"
+                            <input type="file" id="image" name="image" value = "{{ old('image') }}"
                                 class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+
+                            @error('image')
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
 

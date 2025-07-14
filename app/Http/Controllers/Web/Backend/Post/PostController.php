@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('backend.post.index');
+        $posts = Post::all();
+        return view('backend.post.index', compact('posts'));
     }
 
     /**
@@ -27,29 +28,53 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'title' => 'required',
+    //         'description' => 'nullable',
+    //         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //     ]);
+    //     // dd($request->all());
+
+    //     $imagepath = null;
+    //     if ($request->hasFile('image')) {
+    //         $image = $request->file('image');
+    //         $imagepath = time() . '.' . $image->getClientOriginalExtension();
+    //         $image->move(public_path('images'), $imagepath);
+    //     }
+
+    //     $post = new Post();
+    //     $post->title = $request->title;
+    //     $post->description = $request->description;
+    //     $post->image = $imagepath;
+    //     $post->save();
+
+    //     return redirect()->route('post.index');
+    // }
+
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required',
-            'description' => 'nullable',
+            'description' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        // dd($request->all());
 
         $imagepath = null;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imagepath = time() . '.' . $image->getClientOriginalExtension();
+            $imagepath = time() . '.' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $imagepath);
         }
 
-        $post = new Post();
-        $post->title = $request->title;
-        $post->description = $request->description;
-        $post->image = $imagepath;
-        $post->save();
+        Post::create([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'image' => $imagepath
+        ]);
 
-        return redirect()->route('post.index');
+        return redirect()->route('post.index')->with('success', 'Post created successfully.');
     }
 
     /**
