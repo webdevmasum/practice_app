@@ -72,7 +72,7 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->description }}</td>
                                 <td>
-                                    <img src="{{ asset('storage/' . $post->image) }}" alt="Image" width="100">
+                                    <img src="{{ asset('images/' . $post->image) }}" alt="Image" width="100">
                                 </td>
                                 <td>
                                     <a href="{{ route('post.edit', $post->id) }}" class="btn btn-info">

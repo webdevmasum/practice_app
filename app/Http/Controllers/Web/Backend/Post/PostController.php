@@ -28,31 +28,6 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'title' => 'required',
-    //         'description' => 'nullable',
-    //         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    //     ]);
-    //     // dd($request->all());
-
-    //     $imagepath = null;
-    //     if ($request->hasFile('image')) {
-    //         $image = $request->file('image');
-    //         $imagepath = time() . '.' . $image->getClientOriginalExtension();
-    //         $image->move(public_path('images'), $imagepath);
-    //     }
-
-    //     $post = new Post();
-    //     $post->title = $request->title;
-    //     $post->description = $request->description;
-    //     $post->image = $imagepath;
-    //     $post->save();
-
-    //     return redirect()->route('post.index');
-    // }
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -90,7 +65,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('backend.post.edit', compact('post'));
     }
 
     /**
@@ -98,7 +74,44 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($request->all());
+        $validated = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20048',
+        ]);
+
+
+
+        $post = Post::findOrFail($id);
+
+        // Default image path
+        $imagepath = $post->image;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+
+            if (!$image->isValid()) {
+                return redirect()->back()->with('error', 'Uploaded image is not valid.');
+            }
+
+            // Delete old image if exists
+            if ($post->image && file_exists(public_path('images/' . $post->image))) {
+                unlink(public_path('images/' . $post->image));
+            }
+
+            // Save new file
+            $imagepath = time() . '.' . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imagepath);
+        }
+
+        $post->update([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'image' => $imagepath
+        ]);
+
+        return redirect()->route('post.index')->with('success', 'Post updated successfully.');
     }
 
     /**
@@ -106,6 +119,16 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        // ✅ Delete image file if exists
+        if ($post->image && file_exists(public_path('images/' . $post->image))) {
+            unlink(public_path('images/' . $post->image));
+        }
+
+        // ✅ Delete post from database
+        $post->delete();
+
+        return redirect()->route('post.index')->with('success', 'Post deleted successfully.');
     }
 }
