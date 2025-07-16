@@ -1,0 +1,18 @@
+
+---------------------------------
+step:1
+xampp-> mysql-> explore-> apache-> config-> extra-> http-vhosts.config->
+
+< virtualhost *:80>
+    DocumentRoot "C:/xampp/htdocs/blog" //folder er name
+    ServerName Blog.com                 //url name
+< virtualhost>
+
+
+step:2
+notepade-> run as administrator-> file-> open-> cdrive-> windows-> system32-> drivers-> etc-> hosts
+
+127.0.0.1   blog.com
+
+
+-> browser url blog.com run!!
