@@ -14,5 +14,6 @@ notepade-> run as administrator-> file-> open-> cdrive-> windows-> system32-> dr
 
 127.0.0.1   blog.com
 
+*must use .htaccess
 
 -> browser url blog.com run!!
