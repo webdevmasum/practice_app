@@ -18,6 +18,7 @@ php artisan reverb:start --debug  **[chat in local must run reverb]**
 
 4. php artisan make:controller App/Http/Controllers/Web/Backend/Blog/BlogController -r
 
+*!* php artisan make:controller YourControllerName --resource
 *!* php artisan make:controller App/Http/Controllers/Api/OrderController
 *!* php artisan make:controller App/Http/Controllers/API/Cms/AboutPageController
 
