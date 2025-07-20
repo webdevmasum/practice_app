@@ -26,6 +26,9 @@ php artisan reverb:start --debug  **[chat in local must run reverb]**
 
 6. php artisan make:middleware Admin
 
+**** mid journey****
+**** sora video editing ai****
+
 php artisan route:clear
 php artisan cache:clear
 php artisan config:cache
