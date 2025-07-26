@@ -28,6 +28,9 @@ php artisan reverb:start --debug  **[chat in local must run reverb]**
 
 **** mid journey****
 **** sora video editing ai****
+**** ClickUp for project management****
+**** JPR = Job Progress Report ****
+**** relume****
 
 php artisan route:clear
 php artisan cache:clear
