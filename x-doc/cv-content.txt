@@ -1,0 +1,16 @@
+
+
+Career Summary
+    Over 3 years of experience in web design and web application development.
+    Awarded an IT Scholarship by IsDB-BISEW.
+    Proficient in utilizing ERP software for business process management.
+    Develop and maintain web applications using modern frameworks (Laravel, ReactJS, Vue.JS)
+    Experienced in designing, implementing, and optimizing relational databases using MySQL.
+    Strong experience in RESTful API development.
+    Proficient in collaborative team-based development using GitHub.
+    Experienced in deploying and managing projects on VPS, AWS, and cPanel-based servers.
+    Proficient in client communication, collaboration, and project management.
+    Strong problem-solving skills and ability to thrive in fast-paced environments.
+
+
+
