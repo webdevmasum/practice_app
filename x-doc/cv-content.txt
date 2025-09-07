@@ -1,4 +1,21 @@
 
+Notice From management:
+
+1. Order Sheet management: Project er all credentials track must.
+2. Late Issue: 4 den late e 1 dener salary kata hobe. 30 mnt late e asle 45mnt late ber hote hoben, kaj na thakle o.
+3. break:  Brack time e late na kora. Daily ekbar sokal/bikal 1 bar nasta, cha, biri brack 10 mnt er jonno.
+4. Daily Progress: backend and byte builders backend group e Daily project update ensure korben.
+5. Task Complete:  project er module/task complete kore ber hoben.
+6. Client Update: 3 dener moddhe error thakle error dekhaya client update ensure korben.
+7. Issue fix: Project issue 1st complete korben.
+8. Chain of Command: ami na thakle najzul bhai / ashiq bhai ke update deye berhoben.
+9. Project track: project er update, date line, message pass and over all responsibilities apner.
+
+Note: karo kono feedback thakle bolte paren. ei bepar gula amra follow na korle management jekono somoy jekono decision nite parben.
+
+
+
+browgod, mick140178, happiitude, meister_eckart, ciyeone, aviationinsider, lex, hatemverymuch, mikaelteo, norbertellmt
 
 Career Summary
     Over 3 years of experience in web design and web application development.
@@ -11,6 +28,4 @@ Career Summary
     Experienced in deploying and managing projects on VPS, AWS, and cPanel-based servers.
     Proficient in client communication, collaboration, and project management.
     Strong problem-solving skills and ability to thrive in fast-paced environments.
-
-
 
